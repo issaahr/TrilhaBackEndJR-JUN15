@@ -1,14 +1,24 @@
 import 'dotenv/config';
 import express from 'express';
+import 'reflect-metadata';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUI from 'swagger-ui-express';
+import AppDataSource from './config/datasource';
 import { swaggerConfig } from './config/swagger';
-import routes from './routes/routes';
+import router from './routes/routes';
 
 const app = express();
 
+AppDataSource.initialize()
+  .then(() => {
+    console.log('Database connected');
+  })
+  .catch(err => {
+    console.error('Error connecting to database', err);
+  });
+
 app.use(express.json());
-app.use(routes);
+app.use(router);
 
 const swaggerSpec = swaggerJSDoc(swaggerConfig);
 
