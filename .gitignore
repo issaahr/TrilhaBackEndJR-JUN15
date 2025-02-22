@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# SQLite database files
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
