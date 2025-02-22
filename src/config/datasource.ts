@@ -2,11 +2,12 @@ import { DataSource } from 'typeorm';
 
 const AppDataSource = new DataSource({
   type: 'sqlite',
-  database: 'src/taskManagerDatabase.db',
+  database: 'src/database/taskManagerDatabase.db',
   synchronize: true,
   logging: true,
+  migrationsRun: true,
   entities: ['src/data/entities/**/*.ts'],
-  migrations: []
+  migrations: ['src/data/migrations/**/*.ts']
 });
 
 export default AppDataSource;
