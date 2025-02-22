@@ -5,7 +5,7 @@ const AppDataSource = new DataSource({
   database: 'src/taskManagerDatabase.db',
   synchronize: true,
   logging: true,
-  entities: ['src/data/entity/**/*.ts'],
+  entities: ['src/data/entities/**/*.ts'],
   migrations: []
 });
 
