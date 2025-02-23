@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
-import { hashPassword } from '../helppers/passwordHelpper';
-import { User } from './entities';
+import { hashPassword } from '../../helppers/passwordHelpper';
+import { User } from '../entities';
 
 export class CreateInitialUserMigration1740209279440 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {

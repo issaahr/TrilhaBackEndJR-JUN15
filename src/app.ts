@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import { errorMiddleware } from 'middlewares/errorMiddleware';
 import 'reflect-metadata';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUI from 'swagger-ui-express';
@@ -26,6 +27,8 @@ app.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 app.get('/swagger.json', (_req, res) => res.send(swaggerSpec));
 
 console.log(`Add swagger on /swagger`);
+
+app.use(errorMiddleware);
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`Server listening on port ${process.env.SERVER_PORT}`);
