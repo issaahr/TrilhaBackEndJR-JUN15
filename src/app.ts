@@ -1,11 +1,12 @@
 import 'dotenv/config';
 import express from 'express';
-import { errorMiddleware } from 'middlewares/errorMiddleware';
+import 'express-async-errors';
 import 'reflect-metadata';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUI from 'swagger-ui-express';
 import AppDataSource from './config/datasource';
 import { swaggerConfig } from './config/swagger';
+import { errorMiddleware } from './middlewares/errorMiddleware';
 import router from './routes/routes';
 
 const app = express();

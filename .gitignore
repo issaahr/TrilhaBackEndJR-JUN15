@@ -22,7 +22,7 @@ jspm_packages/
 *.sqlite3
 
 # Environment variables
-.env
+*.env
 
 # Build output
 dist/

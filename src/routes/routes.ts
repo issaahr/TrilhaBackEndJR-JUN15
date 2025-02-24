@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { HelloController } from '../controllers/HelloController';
+import authRouter from './authRoutes';
 
 const router = Router();
 
-router.get('/hello', new HelloController().Hello);
+router.use('/', authRouter);
 
 export default router;
